@@ -15,8 +15,21 @@
         }
 
         function oneRound(playerSelection, computerSelection) {
-            
+
+            if(playerSelection === 'Rock' && computerSelection === 'Scissors'){
+                
+                return "You won! " +playerSelection +" beats "+ computerSelection;
+                
+                // Diciding in contrary of the fisrt IF
+                if (computerSelection === 'Rock' && playerSelection === 'Scissor') {
+
+                    return "You computer won! "+computerSelection+ " beats "+playerSelection;
+                    
+                }
+            }
         }
+
+
     </script>
 </body>
 </html>
