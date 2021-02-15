@@ -11,21 +11,45 @@
         function computerPlay() {
             let randomWord = ['Rock', 'Paper', 'Scissors'];
 
+            randomWord.toLowerCase();
+
             return randomWord [Math.floor(Math.random() * randomWord.length)];
         }
 
         function oneRound(playerSelection, computerSelection) {
 
-            if(playerSelection === 'Rock' && computerSelection === 'Scissors'){
-                
-                return "You won! " +playerSelection +" beats "+ computerSelection;
-                
-                // Diciding in contrary of the fisrt IF
-                if (computerSelection === 'Rock' && playerSelection === 'Scissor') {
+            // Save guard: in a case both player choose the same word.
+            if(playerSelection === computerPlay()){
+                return "it’s a tie. Play again"; 
+            }
 
-                    return "You computer won! "+computerSelection+ " beats "+playerSelection;
+                // Comparing Rock with Scissors
+            if(playerSelection === 'Rock' && computerSelection === 'Scissors'){ // Start of first condition
+                
+                return "I won! " +playerSelection +" beats "+ computerSelection;
+               
+            }else  if (playerSelection === 'Scissors' && computerSelection === 'Rock') {
+
+                    return "Computer won! "+computerSelection+ " beats "+playerSelection; // End of first condition
                     
-                }
+            } else 
+                    // Comparing  Paper with Rock
+                if(playerSelection === 'Paper' && computerSelection === 'Rock'){ // Start of second condition
+                
+                return "I won! " +playerSelection +" beats "+ computerSelection;
+               
+            }else  if (playerSelection === 'Rock' && computerSelection === 'Paper') { 
+
+                    return "Computer won! "+computerSelection+ " beats "+playerSelection; // End of second condition
+                    
+            } else 
+                    // Comparing Scissors with Papers
+                if(playerSelection === 'Scissors' && computerSelection === 'Paper'){ // Start of third condition
+                
+                return "I won! " +playerSelection +" beats "+ computerSelection; 
+               
+            }else {
+               return "Computer won! "+computerSelection+ " beats "+playerSelection; // End of third condition
             }
         }
 
