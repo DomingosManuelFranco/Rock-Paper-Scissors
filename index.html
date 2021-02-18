@@ -19,14 +19,14 @@
             let playerSelection = thePlayerSelection.toLowerCase(); //to make the function's input case insensitive
 
             // Save guard: in a case both player choose the same word.
-            if(playerSelection === computerSelection){
-                return "it’s a tie. Play again"; 
-            }
+          //  if(playerSelection === computerSelection){
+               // return "it’s a tie. Play again"; 
+           // }
 
                 // Comparing Rock with Scissors
                 if(playerSelection === 'rock' && computerSelection === 'scissors'){ // Start of first condition
                 
-                return "I won! " +playerSelection +" beats "+ computerSelection;
+                    return "I won! " +playerSelection +" beats "+ computerSelection;
                
             }else  if (playerSelection === 'scissors' && computerSelection === 'rock') {
 
@@ -36,7 +36,7 @@
                     // Comparing  Paper with Rock
                 if(playerSelection === 'paper' && computerSelection === 'rock'){ // Start of second condition
                 
-                return "I won! " +playerSelection +" beats "+ computerSelection;
+                    return "I won! " +playerSelection +" beats "+ computerSelection;
                
             }else  if (playerSelection === 'rock' && computerSelection === 'paper') { 
 
@@ -46,15 +46,18 @@
                     // Comparing Scissors with Papers
                 if(playerSelection === 'scissors' && computerSelection === 'paper'){ // Start of third condition
                 
-                return "I won! " +playerSelection +" beats "+ computerSelection; 
+                    return "I won! " +playerSelection +" beats "+ computerSelection; 
                
             }else {
-               return "Computer won! "+computerSelection+ " beats "+playerSelection; // End of third condition
+                   return "Computer won! "+computerSelection+ " beats "+playerSelection; // End of third condition
             }
         }
 
         // this function plays the oneRound function 5 times and reports the winner
         function game() {
+
+            let playerScoreKeeper = 0;
+            let computerScoreKeeper = 0;
             
             for (let count = 0; count < 5; count++) {
 
